@@ -82,34 +82,7 @@ for (var i = 0; i < dataEntryForms.length; i++) {
   dataEntryForms[i].classList.add("textbox-simple");
   dataEntryForms[i].classList.add("selectbox-simple");
   dataEntryForms[i].classList.add("organized");
-  // Sort our the HTML markup of the Radio Buttons
-  let radioButtons = dataEntryForms[i].getElementsByClassName(
-    "dataentryform_radio"
-  );
-  for (let i = 0; i < radioButtons.length; i++) {
-    let radioButtonLabel = radioButtons[i].firstChild;
-    let radioButton = radioButtons[i].firstChild.firstChild;
-    var forId = radioButton.id + "-" + i;
-    radioButtonLabel.setAttribute("for", forId);
-    radioButton.setAttribute("id", forId);
-    radioButton.classList.add("nbf_customradiobutton");
-    radioButtons[i].insertBefore(radioButton, radioButtonLabel);
-    let labelContent = radioButtonLabel.innerHTML;
-    radioButtonLabel.innerHTML = _span + labelContent;
-  }
-  // Sort our the HTML markup of the Tick Boxes
-  let tickboxes = dataEntryForms[i].getElementsByClassName(
-    "dataentryform-field-tickbox"
-  );
-  // If it is a tickbox
-  for (let i = 0; i < tickboxes.length; i++) {
-    let tickboxLabel = tickboxes[i].firstChild;
-    let tickbox = tickboxes[i].firstChild.firstChild;
-    tickbox.classList.add("nbf_customcheckbox");
-    tickboxes[i].insertBefore(tickbox, tickboxLabel);
-    let labelContent = tickboxLabel.querySelector(".title").innerHTML;
-    tickboxLabel.innerHTML = _span + labelContent;
-  }
+
   // Add the Default button-main
   let submitButton = dataEntryForms[i].getElementsByClassName(
     "nbf_tpl_dataentryform_field_cont_submit"
